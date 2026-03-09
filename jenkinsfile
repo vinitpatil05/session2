@@ -1,0 +1,22 @@
+pipeine{
+agent any
+stages{
+stage ('checkout'){
+steps{
+git 'https://github.com/vinitpatil05/session2.git'
+  }
+}
+stage('publish')
+{
+publishHTML([
+allowmissing:true,
+alwaysLinktoLastBuild:false,
+keepAll:false,
+reportDir:'.',
+reportFiles:'today.html',
+reportName:'MY HTML PAGE'
+])
+}
+}
+}
+
