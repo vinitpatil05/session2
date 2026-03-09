@@ -1,13 +1,13 @@
-pipeine{
+pipeline {
 agent any
 stages{
-stage ('checkout'){
+stages ('checkout'){
 steps{
 git 'https://github.com/vinitpatil05/session2.git'
   }
 }
-stage('publish')
-{
+stage('publish'){
+steps{
 publishHTML([
 allowmissing:true,
 alwaysLinktoLastBuild:false,
@@ -16,6 +16,7 @@ reportDir:'.',
 reportFiles:'today.html',
 reportName:'MY HTML PAGE'
 ])
+}
 }
 }
 }
